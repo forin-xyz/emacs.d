@@ -3,7 +3,10 @@
 ;;; Code:
 
 (defun shell-buffer (buffer) "Open a terminal in BUFFER."
-  (interactive "sBuffer: ")
+  (interactive 
+   (list
+    (read-string "sBuffer:" "*shell*" t)
+    ))
   (progn
     (shell buffer)
     (auto-complete-mode t)
